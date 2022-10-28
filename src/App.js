@@ -64,7 +64,7 @@ export default class App extends Component {
     super();
     this.state = {
       blah: 'name',
-      favNumber: 8
+      favNumber: 9
     }
   }
   // terniaries go hand in hand with react 
