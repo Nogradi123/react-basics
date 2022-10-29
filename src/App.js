@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 
 // function App() {
 //   return (
@@ -24,75 +24,80 @@ import './App.css';
 
 // export default App;
 
+// **********   Everything below this is for example only and not part of the original App.js file  **********************************
 
+// Functional Component - These are mainly used for display of information and will be the main type of component that you will be utilizing.
 
+import React from "react";
 
-// Functional Component -- These are mainly used for display of info and will be the main type of component that you will be utilizing 
+// you can export in the same line as you declare the function instead of exporting it at the bottom of the file.
+export default function App() {
+	function sayHiWorld() {
+		return <p>Hi World!</p>;
+	}
 
-// import React from 'react'
-
-// export default function App() {
-//     function sayHiWorld() {
-//       return (<p>Hi World!</p>);
-//     }
-
-//   // for any function that returns html elements, the return can only be 1 html element. This means that you will usually have to wrap everything that you return in some wrapper element like a div of utilitze shortcut <> [content here] </>
-//   return (
-//     <div>
-//       App
-
-//       {/* {<p>{sayHiWorld()}</p>} */}
-//       {sayHiWorld()}
-//       <p>this is so cool</p>
-//     </div>
-    // if you want a function to be called upon return, then include the ().
-    // for onClick or passing props, you usually dont use the () when calling the function
-//   )
-// }
-
-
-// =========================================================================
-
-
-// Class Component 
-
-import React, { Component } from 'react'
-
-export default class App extends Component {
-  
-  constructor() {
-    super();
-    this.state = {
-      blah: 'name',
-      favNumber: 9
-    }
-  }
-  // terniaries go hand in hand with react 
-  // randomNum = () => Math.floor(Math.random() * 10) % 3 === 0
-
-
-  updateBlah() {
-    this.setState({blah: 'Updated Blah'});
-    // setTimeout(()=> {
-    //   this.updateBlah();
-    // }, 3000)
-  }
-
-  render() {
-    // console.log("This is my log in the class component for App");
-
-    // this.updateBlah();
-    
-    return (
-      <div>
-        {/* {this.state.user ? <a href='/logout'>Log Out</a> : <a href='/login'>Log In</a>} */}
-        <h1>App</h1>
-        {this.updateBlah()}
-        <p>{this.state.favNumber}</p>
-      </div>
-    )
-  }
+	// for any function that returns html elements, the return can only be 1 html element. This means that you will usually have to wrap eveything that you return in some wrapper element like a <div>  [content here]   </div> or utilize the shortcut <>  [content here]  </>
+	return (
+		<div>
+			<div>App</div>
+			{/* <p>{sayHiWorld()}</p> */}
+			{sayHiWorld()}
+		</div>
+	);
+	// if you want a function to be called upon return, then include the ().
+	// for onClick or passing props, you usually don't use the () when calling the function
 }
 
+// ============================================================================
 
+//
 
+// // // Class Component - This is the component that was used prior to hooks in order to grab and manipulate user data like when loging in or filling out some type of form.
+// import React, { Component } from "react";
+
+// export default class App extends Component {
+// 	constructor() {
+// 		super();
+// 		this.state = {
+// 			blah: "name",
+// 			favNumber: 8,
+// 		};
+// 	}
+
+// 	randomNum = () => Math.floor(Math.random() * 354266780);
+
+// 	giveMeBlah() {
+// 		let result = this.state.blah;
+// 		let num = this.randomNum();
+
+// 		if (num % 3 === 0) {
+// 			result = "Updated Blah";
+// 		} else {
+// 			result = "No Multiple of 3!!";
+// 		}
+
+// 		this.setState({ blah: result, favNumber: num });
+// 	}
+
+// 	theDataFromChild(childData) {}
+
+// 	render() {
+// 		console.log("This is my log in the class component for App");
+
+// 		return (
+// 			<div>
+// 				{/* {this.state.user ? (
+// 					<a href="/logout">LogOut</a>
+// 				) : (
+// 					<a href="/login">LogIn</a>
+// 				)} */}
+// 				<h1>Class App</h1>
+// 				{this.state.blah === "name" && this.giveMeBlah()}
+// 				<p>name: {this.state.blah}</p>
+// 				<p>favNum: {this.state.favNumber}</p>
+// 				{/* <ListOfOddJobs theBlahData={this.state} /> */}
+// 				{/* this is how you would have to call the data being passed in props to the child component ListOfOddJobs from the parant component App {this.props.theBlahData.name} */}
+// 			</div>
+// 		);
+// 	}
+// }
